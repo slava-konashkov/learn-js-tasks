@@ -33,7 +33,7 @@ function testCalc() {
         [[2, 2, '*'], 4], // итд
         [[5, 3, '-'], 2], // итп
         [[1, 1, '^'], 'Invalid input'], // Проверяем что данные введены корректно
-        [[1, 1, '+'], 'Invalid input'], // Проверяем что данные введены корректно
+        [[1, 1, '+'], 'TEST ERROR'], // А вот тут у нас должна быть ошибка! Т.к. 1+1=2, а не TEST ERROR
     ];
 
     // Проходим по всему массиву тестКейсов
@@ -44,7 +44,7 @@ function testCalc() {
         // а в переменной expected ожидаемый результат, т.е. 3
         let [params, expected] = oneCase;
 
-        // Вызываем нашу
+        // Вызываем нашу тестуруемую функцию с нужными параметрами
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
         let result = calc(...params);
 
